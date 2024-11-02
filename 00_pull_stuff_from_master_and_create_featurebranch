@@ -11,5 +11,5 @@ echo "fetch origin to get all changes from the remote repo"
 git fetch origin
 
 echo "reset all local changes that are untracked or no pushed to origin"
-git reset --hard origin/main
+git reset --hard origin/master
 
