@@ -17,4 +17,5 @@ echo "also deleting untracked files"
 git clean -f
 
 echo "switching to feature branch"
-git switch -b new_feature_branch --set-upstream-to=origin/new_feature_branch
+git switch -c new_feature_branch 
+git push -u origin new_feature_branch
