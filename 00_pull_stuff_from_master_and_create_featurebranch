@@ -7,7 +7,7 @@ cd ..
 echo "Check out local master branch"
 git checkout master
 
-echo "fetch origin to get all changes from the remote repo
+echo "fetch origin to get all changes from the remote repo"
 git fetch origin
 
 echo "reset all local changes that are untracked or no pushed to origin"
