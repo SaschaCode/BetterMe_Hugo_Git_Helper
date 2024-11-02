@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "Reseting lokal Repo and fetching + pull all content from origin/main"
 
+echo "changing to parent directory since we are loaded as a subrepo =)"
+cd ..
+
 echo "Check out local master branch"
 git checkout master
 
