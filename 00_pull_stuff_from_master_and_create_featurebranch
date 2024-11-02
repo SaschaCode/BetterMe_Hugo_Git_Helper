@@ -13,3 +13,6 @@ git fetch origin
 echo "reset all local changes that are untracked or no pushed to origin"
 git reset --hard origin/master
 
+echo "also deleting untracked files"
+git clean -f
+
