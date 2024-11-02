@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "deleting local and remote branch"
+
+echo "Switch to master first"
+git switch master
+
+echo "fetch origin to get all changes from the remote repo"
+git branch -D new_feature_branch
+
+echo "After that we gonne also delete the remote branch"
+git push origin --delete new_feature_branch
