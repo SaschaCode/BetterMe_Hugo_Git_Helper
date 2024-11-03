@@ -1,21 +1,21 @@
 #!/bin/bash
-echo "Reseting lokal Repo and fetching + pull all content from origin/main"
+echo "Reseting lokal Repo and fetching + pull all content from origin/main Also creating a new feature branch and inititaly pushing to origin"
 
-echo "changing to parent directory since we are loaded as a subrepo =)"
+# "changing to parent directory since we are loaded as a subrepo =)"
 cd ..
 
-echo "Check out local master branch"
+# "Check out local master branch"
 git checkout master
 
-echo "fetch origin to get all changes from the remote repo"
+# "fetch origin to get all changes from the remote repo"
 git fetch origin
 
-echo "reset all local changes that are untracked or no pushed to origin"
+# "reset all local changes that are untracked or no pushed to origin"
 git reset --hard origin/master
 
-echo "also deleting untracked files"
+# "also deleting untracked files"
 git clean -f
 
-echo "switching to feature branch"
+# "switching to feature branch"
 git switch -c new_feature_branch 
 git push -u origin new_feature_branch

@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "Running local hugo server and opening brwoser to show the changes"
+cd ../koeperundseele.de/
+
+# Start the Hugo server in the background
+hugo server -D &
+
+# Get the PID of the Hugo server
+HUGO_PID=$!
+
+# Open the browser (replace 'brave-browser' with your browser command)
+brave-browser http://localhost:1313 &
+
+# Wait for the browser to close
+wait $!
+
+# Terminate the Hugo server
+kill $HUGO_PID
