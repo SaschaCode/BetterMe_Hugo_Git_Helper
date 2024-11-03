@@ -1,18 +1,22 @@
 #!/bin/bash
-echo "Running local hugo server and opening brwoser to show the changes"
-cd ../koeperundseele.de/
+echo "All changes are done. Only the commit and push + merge request is needed now"
 
-# Start the Hugo server in the background
-hugo server -D &
+# "changing to parent directory since we are loaded as a subrepo =)"
+cd ..
 
-# Get the PID of the Hugo server
-HUGO_PID=$!
+# Adding all changed files
+git add .
 
+# Calling commit without -m so that she needs to enter the commit Message in the editor
+git commit
+
+# now pushing changes towards the origin feature branch
+git push
+
+
+# opening browser with the pull request URL
 # Open the browser (replace 'brave-browser' with your browser command)
-brave-browser http://localhost:1313 &
+brave-browser https://gitlab.com/SaschaCode/koerperuseele/-/merge_requests/new?merge_request%5Bsource_branch%5D=new_feature_branch &
 
 # Wait for the browser to close
 wait $!
-
-# Terminate the Hugo server
-kill $HUGO_PID

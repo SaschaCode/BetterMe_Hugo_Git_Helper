@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "Cleaning up. Therefor deleting local and remote branch"
 
+# "changing to parent directory since we are loaded as a subrepo =)"
+cd ..
+
 # "Switch to master first"
 git switch master
 
